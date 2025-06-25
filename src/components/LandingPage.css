@@ -1,0 +1,443 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Top-level container wrapping entire screen */
+body, html, #root {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Background container holding everything */
+.container {
+  background-color: #f0f0f0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Main app container with only navbar + content radius */
+.main-container {
+  background-color: white;
+  height: 100vh;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  overflow: hidden;
+  margin-left: 100px; /* Leave space for sidebar */
+  position: relative; /* gives room for hamburger box */
+}
+
+/* Hamburger icon — separate from main content */
+.hamburger-icon {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  z-index: 999;
+  //background: white;
+  width: 30px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: #B6CCDA;
+}
+
+
+/* Main Content */
+.main-page {
+  display: flex;
+  height: calc(100% - 70px);
+}
+
+/* Sidebar */
+/*.sidebar {
+  width: 60px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar .icon {
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+}
+
+.pagination {
+  transform: rotate(-90deg);
+  font-size: 12px;
+  color: #ccc;
+}
+*/
+/* Content */
+.content {
+  flex: 1;
+  background: linear-gradient(to right, #C8DCE5, #B6CCDA);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  padding: 40px;
+}
+
+.text-area {
+  width: 680px;
+  height:258px;
+  margin-top:-90px;
+  //max-width: 100%;
+}
+
+.text-area h1 {
+  font-size: 64px;
+  color: #FFFFFF;
+  line-height: 86px;
+  letter-spacing: 1.28px; /* 2% of 64px */
+ // margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.text-area p {
+  font-size: 64px;
+  line-height: 86px;
+  letter-spacing: 1.28px; /* 2% of 64px */
+  color: #FFFFFF;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: white;
+  width: 250px;
+  height: 70px;
+  border: 3px solid white;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #B6CCDA;
+}
+
+/* Watch Area */
+.watch-area {
+  position: relative;
+  text-align: center;
+}
+
+.watch-img {
+  width: 489px;
+  height: 489px;
+}
+
+.dot-column {
+  position: absolute;
+  top: 120px;
+  right: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.dot-wrapper {
+  position: relative;
+}
+
+.dot-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: repeating-linear-gradient(
+    to bottom,
+    white,
+    white 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.dot-wrapper:last-child::after {
+  display: none; /* No line after last dot */
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: grey;
+  cursor: pointer;
+}
+
+/* Specific dot colors */
+.dot.black { background-color: #404354; }
+.dot.grey  { background-color: #ABC6D6; }
+.dot.blue  { background-color: #58D7C4; }
+.dot.peach { background-color: #F2CEC6; }
+
+/* Selected/Highlighted dot */
+.dot-wrapper.selected .dot {
+  border: 3px solid white;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+
+
+.watches {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.watches img {
+  width: 131px;
+  height: 98px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* === Responsive CSS Additions === */
+
+/* For width up to 1417px */
+@media (max-width: 1417px) {
+  .text-area {
+    width: 90%;
+    margin-top: -50px;
+  }
+
+  .watch-img {
+    width: 420px;
+    height: 420px;
+  }
+
+  .dot-column {
+    right: -20px;
+    top: 100px;
+  }
+
+  .watches img {
+    width: 110px;
+  }
+}
+
+/* For width up to 1024px */
+@media (max-width: 1024px) {
+  .main-container {
+    margin-left: 60px;
+    border-radius: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .text-area {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .text-area h1,
+  .text-area p {
+    font-size: 44px;
+    line-height: 60px;
+  }
+
+  .btn {
+    width: 180px;
+    height: 60px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .watch-img {
+    width: 340px;
+    height: 340px;
+    margin-bottom: 50px;
+  }
+
+  .dot-column {
+    top: 90px;
+    right: -10px;
+  }
+
+  .watches {
+    //justify-content: center;
+     display: none; 
+  }
+
+  .watches img {
+    width: 100px;
+  }
+}
+
+/* For short screen height like laptops */
+@media (max-height: 800px) {
+  .content {
+    padding: 20px 20px;
+    gap: 20px;
+  }
+
+  .text-area h1,
+  .text-area p {
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  .watch-img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .dot-column {
+    top: 80px;
+    right: 0;
+    gap: 12px;
+  }
+
+  .btn {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+/* Your already working 768px and 480px responsive rules can follow below */
+
+
+@media (max-width: 768px) {
+  .main-page {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .content {
+    padding: 30px 10px;
+  }
+
+  .text-area h1,
+  .text-area p {
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.72px;
+  }
+
+  .btn {
+    width: 180px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .watch-area {
+    margin-top: 20px;
+  }
+
+  .watch-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .dot-column {
+    right: 0;
+    top: 80px;
+    gap: 14px;
+  }
+
+  .watches {
+    bottom: -40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .watches img {
+    width: 85px;
+    height: auto;
+  }
+
+  .hamburger-icon {
+    top: 20px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    margin-left: 0;
+    border-radius: 0;
+  }
+
+  .watch-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .dot-column {
+    top: 60px;
+    right: 0;
+    gap: 12px;
+  }
+
+  .dot-wrapper .dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dot-wrapper.selected .dot {
+    width: 24px;
+    height: 24px;
+  }
+
+  .watches img {
+    width: 70px;
+    height: auto;
+  }
+
+  .btn {
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .text-area h1,
+  .text-area p {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}

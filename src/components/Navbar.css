@@ -1,0 +1,188 @@
+/* Base Styles */
+.navbar {
+  background: linear-gradient(to right, #C8DCE5, #B6CCDA);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px 0 62px;
+  flex-wrap: wrap;
+}
+
+.apple-logo {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.logoimg {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar-item {
+  position: relative;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 9px 30px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.navbar-item:hover {
+  background-color: white;
+  color: #B6CCDA;
+  font-weight: 600;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.vertical-line {
+  height: 20px;
+  width: 1px;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.nav-icon {
+  color: white;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.nav-icon:hover {
+  color: #B6CCDA;
+}
+
+/* === Responsive CSS === */
+
+/* For width up to 1417px */
+@media (max-width: 1417px) {
+  .navbar-menu {
+    gap: 40px;
+  }
+
+  .navbar-item {
+    font-size: 17px;
+    padding: 8px 26px;
+  }
+
+  .logoimg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* For width up to 1024px */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px 0 40px;
+  }
+
+  .apple-logo {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .navbar-menu {
+    gap: 30px;
+    justify-content: flex-start;
+  }
+
+  .navbar-icons {
+    align-self: flex-end;
+    margin-top: 16px;
+  }
+}
+
+/* For width up to 768px */
+@media (max-width: 768px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+  }
+
+  .apple-logo {
+    align-items: center;
+  }
+
+  .navbar-menu {
+    justify-content: center;
+  }
+
+  .navbar-icons {
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
+
+/* For width up to 480px */
+@media (max-width: 480px) {
+  .navbar-menu {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .navbar-icons {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .navbar {
+    padding-left: 10px;
+    align-items: center;
+  }
+}
+
+/* For short screens — height below 800px */
+@media (max-height: 800px) {
+  .navbar {
+    padding: 20px 30px 0 30px;
+  }
+
+  .navbar-item {
+    font-size: 16px;
+    padding: 6px 20px;
+  }
+
+  .logoimg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar-icons {
+    gap: 12px;
+  }
+}

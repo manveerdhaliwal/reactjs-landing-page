@@ -1,0 +1,112 @@
+/* Sidebar floats on left for large screens */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  z-index: 998;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar floats independently */
+/* .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  z-index: 998;
+} */
+
+/* Push icons + pagination to bottom */
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.icon {
+  font-size: 28px;
+  color: #B6CCDA;
+  cursor: pointer;
+}
+
+.pagination {
+  transform: rotate(-90deg);
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* Bottom sidebar for small screens */
+@media (max-width: 1040px) {
+  .sidebar {
+    
+    //display: flex;
+  
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .sidebar-bottom {
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    gap: 0;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar-icons {
+    flex-direction: row;
+    gap: 24px;
+    margin-right: 5px;
+  }
+
+  .pagination {
+    transform: none;
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  
+  .navbar {
+    display: none;
+  }
+
+  
+
+
+}
