@@ -7,7 +7,7 @@
 /* Top-level container wrapping entire screen */
 body, html, #root {
   height: 100%;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f0f0f0;
 }
 
