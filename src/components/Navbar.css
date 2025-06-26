@@ -1,4 +1,3 @@
-/* Base Styles */
 .navbar {
   background: linear-gradient(to right, #C8DCE5, #B6CCDA);
   display: flex;
@@ -23,7 +22,7 @@
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: 50px;
+  gap: 50px;  //seee
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -35,7 +34,7 @@
   font-weight: 500;
   font-size: 18px;
   cursor: pointer;
-  padding: 9px 30px;
+  padding: 9px 30px; //seee
   border-radius: 100px;
   transition: all 0.3s ease;
 }
@@ -48,7 +47,7 @@
 
 .navbar-icons {
   display: flex;
-  gap: 16px;
+  gap: 16px;  
   align-items: center;
 }
 
@@ -79,8 +78,8 @@
   }
 
   .navbar-item {
-    font-size: 17px;
-    padding: 8px 26px;
+    font-size: 18px;
+    padding: 8px 22px;
   }
 
   .logoimg {
@@ -94,33 +93,46 @@
   }
 }
 
-/* For width up to 1024px */
-@media (max-width: 1024px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 20px 0 40px;
-  }
-
-  .apple-logo {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-  }
-
+/* For width between 1092px and 1024px – mid-size laptops/tablets */
+@media (max-width: 1092px) {
   .navbar-menu {
-    gap: 30px;
-    justify-content: flex-start;
+    gap: 25px;
   }
 
-  .navbar-icons {
-    align-self: flex-end;
-    margin-top: 16px;
+  .navbar-item {
+    padding: 8px 20px;
+    font-size: 16px;
   }
 }
 
-/* For width up to 768px */
-@media (max-width: 768px) {
+
+/* For width up to 1024px */
+@media (max-width: 1024px) {
+  .navbar {
+    gap: 20px; /* Reduced gap between logo + icons if stacked */
+    padding: 20px 20px 0 30px; /* Adjust padding */
+  }
+
+  .navbar-item {
+    font-size: 16px;        /* Slightly smaller text */
+    padding: 6px 18px;      /* Less padding around items */
+  }
+
+  .navbar-menu {
+    gap: 20px; /* Reduced gap between menu items */
+  }
+
+  /* Optional: keep logo area cleaner */
+  .logoimg {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+
+/* For width up to 840px */
+@media (max-width: 840px) {
   .navbar {
     padding-left: 20px;
     padding-right: 20px;

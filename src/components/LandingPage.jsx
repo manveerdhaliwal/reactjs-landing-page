@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LandingPage.css';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
@@ -12,9 +12,16 @@ import Watch4 from '../assets/Watch 4.png';
 const LandingPage = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleSidebar = () => {
-    if (window.innerWidth <= 768) {
+    if (windowWidth <= 840) {
       setMobileMenuVisible(!mobileMenuVisible);
     } else {
       setSidebarVisible(!sidebarVisible);
@@ -27,8 +34,18 @@ const LandingPage = () => {
         <img src={Menu} alt="menu" />
       </div>
 
-      {sidebarVisible && window.innerWidth > 768 && <Sidebar />}
-      {mobileMenuVisible && window.innerWidth <= 768 && (
+      {/* Show Sidebar:
+          - Always show on small screen (≤840px)
+          - Only show on large screen if sidebarVisible is true
+      */}
+      {windowWidth <= 840 ? (
+        <Sidebar />
+      ) : (
+        sidebarVisible && <Sidebar />
+      )}
+
+      {/* Mobile Menu (nav panel sliding in) */}
+      {mobileMenuVisible && windowWidth <= 840 && (
         <MobileMenu onClose={() => setMobileMenuVisible(false)} />
       )}
 

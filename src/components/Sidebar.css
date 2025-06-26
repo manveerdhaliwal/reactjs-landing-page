@@ -61,7 +61,7 @@
 }
 
 /* Bottom sidebar for small screens */
-@media (max-width: 1040px) {
+@media (max-width: 1024px) {
   .sidebar {
     
     //display: flex;
@@ -102,11 +102,19 @@
   }
 
   
+  /* .navbar {
+    display: none;
+  } */
+
+
+}
+
+@media (max-width: 840px){
   .navbar {
     display: none;
   }
 
-  
-
-
+  /* .sidebar {
+  position: fixed;
+  } */
 }

@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 70%;
-  height: 100vh;
+  width: 267px;
+  height: 95vh;
   background-color: white;
   z-index: 1000;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
@@ -15,12 +15,12 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .mobile-menu li {
-  padding: 20px 40px;
-  font-size: 20px;
+  padding: 40px 80px;
+  font-size: 18px;
   color: #ABC6D6;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -28,8 +28,8 @@
 
 .mobile-menu li.active {
   background-color: #f1f6fa;
-  font-weight: bold;
-  color: #222;
+  font-weight: 600;
+  color: #404354;
 }
 
 .mobile-menu li:hover {
