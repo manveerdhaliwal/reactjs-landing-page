@@ -14,7 +14,7 @@ const Sidebar = () => {
           <FaTwitter className="icon" />
           <FaLinkedinIn className="icon" />
         </div>
-        <div className="pagination">← 1 →</div>
+        
       </div>
     </div>
   );
