@@ -59,7 +59,9 @@ const LandingPage = () => {
                 <span className="bold">The Perfect Moment</span>
               </h1>
               <p>Between Past And Future.</p>
-              <button className="btn">Buy Now</button>
+             <div className="btn-wrapper">
+    <button className="btn">Buy Now</button>
+             </div>
             </div>
 
             <div className="watch-area">

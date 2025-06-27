@@ -22,7 +22,7 @@
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: 50px;  //seee
+  gap: 30px;  //seee
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -51,6 +51,27 @@
   gap: 16px;  
   align-items: center;
 }
+
+.search-input {
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight:400;
+  width: 295px;
+  height:42px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.27);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+}
+
+.search-input::placeholder {
+  color:#FFFFFF; /* Light white with opacity */
+  font-weight: 400; /* optional */
+}
+
 
 .vertical-line {
   height: 20px;
@@ -83,6 +104,13 @@
     padding: 8px 22px;
   }
 
+  .search-input {
+  padding: 6px 12px;
+  width: 265px;
+  height:42px;
+}
+
+
   .logoimg {
     width: 48px;
     height: 48px;
@@ -94,16 +122,45 @@
   }
 }
 
+
+@media (max-width: 1272px) {
+
+.apple-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+    .navbar-menu {
+        gap: 20px;
+    }
+
+  .search-input {
+  padding: 6px 12px;
+  width: 200px;
+  height:42px;
+}
+
+}
+
 /* For width between 1092px and 1024px – mid-size laptops/tablets */
 @media (max-width: 1092px) {
   .navbar-menu {
-    gap: 25px;
+    gap: 20px;
   }
 
   .navbar-item {
     padding: 8px 20px;
     font-size: 16px;
   }
+
+  .search-input {
+  padding: 6px 12px;
+  width: 180px;
+  height:42px;
+}
+
 }
 
 
@@ -122,6 +179,16 @@
   .navbar-menu {
     gap: 20px; /* Reduced gap between menu items */
   }
+
+  .navbar-icons {
+    gap:10px;
+  }
+
+  /* .search-input {
+  padding: 6px 12px;
+  width: 130px;
+  height:42px;
+} */
 
   /* Optional: keep logo area cleaner */
   .logoimg {
@@ -148,6 +215,11 @@
     justify-content: center;
   }
 
+  .search-input {
+  padding: 6px 12px;
+  width: 200px;
+  height:42px;
+
   .navbar-icons {
     margin-top: 12px;
     justify-content: center;
@@ -172,6 +244,11 @@
     padding-left: 10px;
     align-items: center;
   }
+
+  .search-input {
+  padding: 6px 12px;
+  width: 130px;
+  height:42px;
 }
 
 /* For short screens — height below 800px */
