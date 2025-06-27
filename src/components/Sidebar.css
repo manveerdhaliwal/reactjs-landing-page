@@ -110,7 +110,7 @@
 }
 
 @media (max-width: 840px){
-  .navbar {
+  .navbar-menu {
     display: none;
   }
 
