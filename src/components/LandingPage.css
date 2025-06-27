@@ -349,6 +349,7 @@ body, html, #root {
     //height: auto;
     align-items: center;
     gap: 40px;
+    
   }
 
   .content {
@@ -362,9 +363,9 @@ body, html, #root {
   .main-container {
   background-color: white;
   height: 100vh;
-  //border-radius:25px;
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-radius:0px;
+  //border-bottom-right-radius: 25px;
+  //border-bottom-left-radius: 25px;
   overflow: hidden;
   margin-left: 0px; /* Leave space for sidebar */
  // position: relative; /* gives room for hamburger box */
