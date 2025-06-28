@@ -52,20 +52,33 @@
   align-items: center;
 }
 
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .search-input {
-  padding: 6px 12px;
+  padding: 6px 36px 6px 12px; /* add right padding for icon space */
   border-radius: 100px;
   border: none;
   outline: none;
   font-size: 14px;
-  font-weight:400;
-  width: 295px;
-  height:42px;
-  transition: all 0.3s ease;
+  font-weight: 400;
+  width: 275px;
+  height: 42px;
   background-color: rgba(255, 255, 255, 0.27);
   backdrop-filter: blur(8px);
   color: #FFFFFF;
 }
+
+.search-icon-inside {
+  position: absolute;
+  right: 12px;
+  color: white;
+  cursor: pointer;
+}
+
 
 .search-input::placeholder {
   color:#FFFFFF; /* Light white with opacity */
@@ -88,7 +101,7 @@
 }
 
 .nav-icon:hover {
-  color: #B6CCDA;
+  color:rgb(209, 223, 232);
 }
 
 /* === Responsive CSS === */
@@ -106,7 +119,7 @@
 
   .search-input {
   padding: 6px 12px;
-  width: 265px;
+  width: 18.7vw;
   height:42px;
 }
 
@@ -123,7 +136,7 @@
 }
 
 
-@media (max-width: 1272px) {
+@media (max-width: 1270px) {
 
 .apple-logo {
   display: flex;
@@ -197,7 +210,35 @@
   }
 }
 
+@media (max-width: 915px) {
+  .navbar {
+  gap:20px;
+  }
 
+  .navbar-menu {
+    justify-content: center;
+  }
+
+  .search-input {
+  width: 130px;
+  height:32px;
+  padding: 6px 36px 6px 12px;}
+
+  .search-input::placeholder {
+    font-size:12px;
+  color:#FFFFFF; /* Light white with opacity */
+  font-weight: 200; /* optional */
+}
+
+
+}
+
+@media (max-width: 865px) {
+  .search-input {
+  padding: 6px 12px;
+  width: 100px;
+  height:42px;}
+}
 
 /* For width up to 840px */
 @media (max-width: 840px) {
@@ -218,7 +259,7 @@
   .search-input {
   padding: 6px 12px;
   width: 200px;
-  height:42px;
+  height:42px;}
 
   .navbar-icons {
     margin-top: 12px;
@@ -249,6 +290,7 @@
   padding: 6px 12px;
   width: 130px;
   height:42px;
+}
 }
 
 /* For short screens — height below 800px */

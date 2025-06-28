@@ -7,6 +7,10 @@ import Logo from '../assets/Logo.png';
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
 
+  const toggleSearch = () => {
+    setShowSearch(prev => !prev);
+  };
+
   return (
     <div className='navbar'>
       <div className='apple-logo'>
@@ -22,19 +26,24 @@ const Navbar = () => {
       </div>
 
       <div className='navbar-icons'>
-        {showSearch && (
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search here"
-            autoFocus
+        {showSearch ? (
+          <div className="search-wrapper">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search here"
+              autoFocus
+            />
+            <FaSearch className="search-icon-inside" size={16} onClick={toggleSearch} />
+          </div>
+        ) : (
+          <FaSearch
+            className="nav-icon"
+            size={18}
+            onClick={toggleSearch}
           />
         )}
-        <FaSearch
-          className="nav-icon"
-          size={18}
-          onClick={() => setShowSearch(prev => !prev)}
-        />
+
         <div className="vertical-line" />
         <FiShoppingBag className="nav-icon" size={18} />
       </div>
