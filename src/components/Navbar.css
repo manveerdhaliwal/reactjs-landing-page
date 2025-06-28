@@ -197,11 +197,11 @@
     gap:10px;
   }
 
-  /* .search-input {
+  .search-input {
   padding: 6px 12px;
   width: 130px;
-  height:42px;
-} */
+  height:34px;
+}
 
   /* Optional: keep logo area cleaner */
   .logoimg {
@@ -210,14 +210,20 @@
   }
 }
 
-@media (max-width: 915px) {
+@media (max-width: 944px) {
   .navbar {
   gap:20px;
   }
 
   .navbar-menu {
     justify-content: center;
+    gap:10px;
   }
+
+  .navbar-item {
+        font-size: 12px;
+        padding: 6px 20px;
+    }
 
   .search-input {
   width: 130px;
@@ -234,10 +240,19 @@
 }
 
 @media (max-width: 865px) {
+  .navbar-menu {
+        justify-content: center;
+        gap:10px;
+    }
   .search-input {
   padding: 6px 12px;
-  width: 100px;
-  height:42px;}
+  width: 130px;
+  height:32px;}
+
+  .navbar-item {
+        font-size: 10px;
+        padding: 6px 20px;
+    }
 }
 
 /* For width up to 840px */
@@ -300,8 +315,8 @@
   }
 
   .navbar-item {
-    font-size: 16px;
-    padding: 6px 20px;
+    font-size: 14px;
+    padding: 6px 16px;
   }
 
   .logoimg {
